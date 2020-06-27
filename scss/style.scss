@@ -3,3 +3,112 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    /*95% of the viewport height*/
+    height: 90vh;
+    /*two tone background*/
+    background-image: linear-gradient( to right bottom, rgba(75, 100, 190, 0.8), rgba(83, 51, 237, 0.8)), url(/images/gym.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    /*image clipping*/
+    clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    .text-box {
+        display: flex;
+        justify-content: flex-start;
+        .heading-primary {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .heading-primary-main {
+                color: white;
+                margin: 1rem;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.header:hover {
+    transform: scale(1.05);
+}
+
+.header-bottom {
+    /*95% of the viewport height*/
+    height: 90vh;
+    /*two tone background*/
+    background-image: linear-gradient( to right bottom, rgba(199, 4, 4, 0.8), rgba(243, 16, 16, 0.8)), url(/images/football.jpg);
+    background-size: cover;
+    background-position: top;
+    bottom: 85vh;
+    position: relative;
+    /*image clipping*/
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    display: flex;
+    justify-content: flex-end;
+    .text-box-lower {
+        display: flex;
+        justify-content: flex-end;
+        .heading-primary-lower {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .heading-primary-sub {
+                color: white;
+                margin: 1rem;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.header-bottom:hover {
+    transform: scale(1.03);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    80% {
+        transform: translateX(23px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    80% {
+        transform: translateX(-23px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
